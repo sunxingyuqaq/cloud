@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: register
+  profiles:
+    active: dev
+server:
+  port: 7000
+eureka:
+  instance:
+    hostname: server
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 10000

@@ -1,0 +1,16 @@
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: server-prod
+    prefer-ip-address: false
+    metadata-map:
+      name: eureka-register-center-prod
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://server-dev:7001/eureka/
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 10000
