@@ -1,6 +1,7 @@
 package com.cloud.study.api.listener;
 
 import com.cloud.study.api.service.MailService;
+import com.cloud.study.model.dto.AttachEmailDTO;
 import com.cloud.study.model.dto.HtmlEmailDTO;
 import com.cloud.study.model.dto.ImgEmailDTO;
 import com.cloud.study.model.dto.TextEmailDTO;
@@ -79,6 +80,26 @@ public class MailListener {
                     imgEmailDTO.getSubject(),
                     imgEmailDTO.getRscId(),
                     imgEmailDTO.getImgPath()
+            );
+        } catch (MessagingException e) {
+            // nothing to do
+        }
+    }
+
+    /**
+     * 线程安全 消费 附件消息
+     * @param imgEmailDTO
+     */
+    @AllowConcurrentEvents
+    @Subscribe
+    public void sendAttachMail(AttachEmailDTO attachEmailDTO){
+        try {
+            emailService.sendAttachMail(
+                    attachEmailDTO.getTo(),
+                    attachEmailDTO.getSubject(),
+                    attachEmailDTO.getContent(),
+                    attachEmailDTO.getFileName(),
+                    attachEmailDTO.getFilePath()
             );
         } catch (MessagingException e) {
             // nothing to do

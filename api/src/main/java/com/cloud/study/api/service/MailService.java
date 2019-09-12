@@ -40,9 +40,10 @@ public interface MailService {
      * sendAttachMail
      * @param to
      * @param subject
+     * @param text 不能为空
      * @param fileName
      * @param filePath
-     * @throws MessagingException e
+     * @throws MessagingException
      */
     void sendAttachMail(String to,String subject,String text,String fileName,String filePath) throws MessagingException;
 }
