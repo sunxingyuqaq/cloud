@@ -1,4 +1,4 @@
-/target/
-/src/test/
+*/target/
+*/src/test/
 .idea
 *.iml
