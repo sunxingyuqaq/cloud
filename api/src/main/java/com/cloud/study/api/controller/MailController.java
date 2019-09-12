@@ -1,6 +1,5 @@
 package com.cloud.study.api.controller;
 
-import com.cloud.study.model.dto.HtmlEmailDTO;
 import com.cloud.study.model.dto.TextEmailDTO;
 import com.google.common.collect.Maps;
 import com.google.common.eventbus.AsyncEventBus;
