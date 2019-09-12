@@ -16,3 +16,7 @@ spring:
     username: root
     password: Gepoint
     type: com.zaxxer.hikari.HikariDataSource
+  mail:
+    host: smtp.qq.com
+    username: 1287062155@qq.com
+    password: ssudujtpugenjbji
